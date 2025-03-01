@@ -1,73 +1,91 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import Image from "next/image";
+import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import React from 'react'
 import CustomPrevArrow from "./ProductSlider"
 
 const Home = () => {
+    const images = [
+        "./home1.png",
+        "./home2.png",
+        "./home3.png",
+        "./home4.png"
+    ]
     return (
-        <div >
-            <div className='flex-[3_3_0%] mt-5'>
-                <div className="flex gap-4 max-w-[1200px] mx-auto">
-                    {/* Slider chính bên trái */}
-                    <div className=" w-3/4">
-                        <Swiper
-                            modules={[Navigation, Autoplay]}
-                            navigation
-                            autoplay={{ delay: 3000 }}
-                            loop
-                            className="rounded-lg overflow-hidden"
-                        >
-                            <SwiperSlide>
-                                <img
-                                    src="https://cdn.flyonui.com/fy-assets/components/carousel/image-22.png"
-                                    alt="Slide 1"
-                                    className="w-full h-[350px] object-cover"
+        <div>
+            <div className=" max-w-[1200] m-auto">
+                {/* 11111111111111111 */}
+                <div>
+                    <div className="mt-2 flex gap-2" >
+                        <div className="  flex-[1] w-1/4">
+                            {/* Sidebar */}
+                            <aside className="  bg-white shadow-lg p-4">
+                                <ul className="space-y-[3px] text-gray-700 ">
+                                    <li className="font-bold border-b-2">Tivi, Loa - Dàn Âm Thanh</li>
+                                    <li className="text-red-500 border-b-2">Máy giặt, Máy sấy quần áo</li>
+                                    <li className="border-b-2">Điều hòa nhiệt độ</li>
+                                    <li className="text-red-500">Sưởi các loại, Quạt mát</li>
+                                    <li className="border-b-2">Máy xay, ép, pha chế</li>
+                                    <li className="border-b-2">Máy lọc nước, máy rữa bát </li>
+                                    <li className="border-b-2">Lọc không khí, hút bụi </li>
+                                    <li className="border-b-2">Đồ bếp, nồi cơm điện</li>
+                                    <li className="border-b-2">lò vi sóng, nồi chiên</li>
+                                    <li className="border-b-2">Gia Dụng, dụng cụ</li>
+                                    <li className="border-b-2">Laptop, Laptop AI</li>
+                                    <li className="border-b-2">Điện Thoại, Tablet</li>
+                                    <li className="border-b-2">PC, màn hình, máy in</li>
+                                </ul>
+                            </aside>
+                        </div>
+                        <div className="w-2/4">
+                            <Swiper
+                                modules={[Navigation, Pagination, Autoplay]}
+                                navigation
+                                pagination={{ clickable: true }}
+                                autoplay={{ delay: 3000 }}
+                                loop
+                                className=" shadow-lg"
+                            >{images.map((src, index) => (
+                                <SwiperSlide key={index}>
+                                    <img
+                                        src={src}
+                                        alt={`Slide ${index + 1}`}
+                                        className=" w-full h-auto object-cover"
+                                    />
+                                </SwiperSlide>
+                            ))}
+
+                            </Swiper>
+                        </div>
+                        <div className=" w-1/4 space-y-0">
+                            {["/home5.png", "/home6.png", "/home7.png"].map((src, index) => (
+                                <Image
+                                    key={index}
+                                    src={src}
+                                    alt="Hình ảnh minh họa"
+                                    width={310}
+                                    height={145}
+                                    className="shadow-lg object-cover "
                                 />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <img
-                                    src="https://cdn.flyonui.com/fy-assets/components/carousel/image-15.png"
-                                    alt="Slide 2"
-                                    className="w-full h-[350px] object-cover"
-                                />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <img
-                                    src="https://cdn.flyonui.com/fy-assets/components/carousel/image-16.png"
-                                    alt="Slide 3"
-                                    className="w-full h-[350px] object-cover"
-                                />
-                            </SwiperSlide>
-                        </Swiper>
+                            ))}
+                        </div>
                     </div>
 
-                    {/* Danh sách quảng cáo bên phải */}
-                    <div className="w-1/4 flex flex-col gap-4">
-                        <img
-                            src="https://cdn.flyonui.com/fy-assets/components/carousel/image-8.png"
-                            alt="Ad 1"
-                            className="rounded-lg shadow-md"
-                        />
-                        <img
-                            src="https://cdn.flyonui.com/fy-assets/components/carousel/image-8.png"
-                            alt="Ad 2"
-                            className="rounded-lg shadow-md"
-                        />
-                        <img
-                            src="https://cdn.flyonui.com/fy-assets/components/carousel/image-8.png"
-                            alt="Ad 3"
-                            className="rounded-lg shadow-md"
-                        />
-                    </div>
                 </div>
+                {/* 2222222222222222222 */}
+                <div></div>
+                {/* 333333333333333333 */}
+                <div></div>
+                {/* 44444444444444444 */}
+                <div></div>
+                {/* 5555555555555555555555 */}
+                <div></div>
+                {/* 6666666666666666666666 */}
+                <div></div>
             </div>
-            <div className='flex-[1_1_0%]'>
-
-            </div>
-            <CustomPrevArrow />
         </div>
     )
 }

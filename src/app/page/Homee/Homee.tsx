@@ -1,11 +1,7 @@
-import React from 'react'
-
-const Homee = () => {
+export default function homeerouting() {
     return (
         <div>
-
+            <h1>routing home</h1>
         </div>
-    )
+    );
 }
-
-export default Homee

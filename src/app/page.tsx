@@ -6,11 +6,9 @@ import Homee from "./Homee/Homee";
 export default function Home() {
   return (
     <div>
-
       <Homee />
       <CustomPrevArrow
       />
-
     </div>
   );
 }

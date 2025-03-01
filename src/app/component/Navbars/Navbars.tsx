@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from 'react'
 import { FaPhoneAlt } from 'react-icons/fa'
 import { SiGooglemaps } from 'react-icons/si'
@@ -30,7 +31,10 @@ const Navbars = () => {
                     <div className="max-w-[1200px] mx-auto flex p-3" >
                         {/* logo */}
                         <div className="flex-[1_1_0%] pt-4 flex-shrink-0">
-                            <Image src="/logo.png" alt="Logo" width={200} height={150} />
+                            <Link href="/">
+                                <Image src="/logo.png" alt="Logo" width={200} height={150} />
+                            </Link>
+
                         </div>
                         {/* call end address */}
                         <div className=" justify-around flex-[3_3_0%] pt-4 hidden lg:flex">
@@ -87,8 +91,13 @@ const Navbars = () => {
                                 <ul className='flex py-2 space-x-4 text-xs justify-end '>
                                     <li className=" hover:text-blue-700 hover:underline transition cursor-pointer">Tin khuyến mãi</li>
                                     <li className=" hover:text-blue-700 hover:underline transition cursor-pointer">Tư vấn</li>
-                                    <li className=" hover:text-blue-700 hover:underline transition cursor-pointer">Đăng nhập</li>
-                                    <li className=" hover:text-blue-700 hover:underline transition cursor-pointer">Đăng ký</li>
+                                    <li className=" hover:text-blue-700 hover:underline transition cursor-pointer">
+                                        <Link href="/login">Đăng nhập
+
+                                        </Link >                                  </li>
+                                    <li className="hover:text-blue-700 hover:underline transition cursor-pointer">
+                                        <Link href={'/login'}>Đăng ký</Link>
+                                    </li>
                                 </ul>
 
                             </div>
@@ -116,7 +125,7 @@ const Navbars = () => {
             {/* menu-hearder */}
             <div className="shadow-lg bg-white">
                 {/* Navbar Desktop */}
-                <div className=" max-w-[1200px] mx-auto flex items-center p-4">
+                <div className=" max-w-[900px] m-auto flex p-4">
                     <button
                         className="lg:hidden text-2xl"
                         onClick={() => setOpen(!open)}
